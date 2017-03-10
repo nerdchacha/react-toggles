@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "es2015",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "lodash",
+    ["transform-imports", {
+      "react-bootstrap": {
+        "transform": "react-bootstrap/lib/${member}",
+        "preventFullImport": true
+      },
+      "react-overlays": {
+        "transform": "react-overlays/lib/${member}",
+        "preventFullImport": true
+      },
+    }],
+    "transform-runtime",
+  ]
+}
