@@ -12,6 +12,7 @@
     "test:local": "env NODE_ENV=test mocha --opts mocha.opts",
     "build:component": "babel src/components/toggle --out-dir dist/components/toggle"
   },
+  "main": "index.js",
   "keywords": [
     "toggle",
     "react-toggle",
@@ -22,6 +23,11 @@
   ],
   "author": "Yatin Gera <yatin.gera5@gmail.com>",
   "license": "MIT",
+  "precommit": {
+    "run": [
+      "lint:changed"
+    ]
+  },
   "dependencies": {
     "react-inline-css": "^2.3.0"
   },
@@ -34,6 +40,7 @@
     "babel-core": "^6.8.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-display-name": "2.0.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-transform-imports": "^1.1.0",
@@ -51,7 +58,7 @@
     "eslint-config-standard": "^6.2.1",
     "eslint-config-standard-react": "^4.2.0",
     "eslint-plugin-babel": "4.0.0",
-    "eslint-plugin-import": "1.6.1",
+    "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "^6.10.0",
@@ -62,6 +69,7 @@
     "jsdom": "8.5.0",
     "mocha": "2.4.5",
     "ncp": "^2.0.0",
+    "pre-commit": "^1.2.2",
     "react-addons-test-utils": "15.0.2",
     "sass-loader": "^6.0.2",
     "scss-loader": "0.0.1",

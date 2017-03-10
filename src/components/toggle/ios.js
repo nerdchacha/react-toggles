@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 
-import ToggleWrapper from './toggleWrapper.js'
+import ToggleWrapper from './toggleWrapper'
 import {getStyle} from './custom-styles/ios'
 
 class IosToggle extends Component {
