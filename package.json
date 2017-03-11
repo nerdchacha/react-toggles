@@ -1,5 +1,5 @@
 {
-  "name": "react-toggles",
+  "name": "reacttoggles",
   "version": "0.0.1",
   "description": "A collection of commonly used toggle buttons implemented in react with internal css",
   "scripts": {

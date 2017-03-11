@@ -58,18 +58,18 @@ export function getStyle (
     opacity: 0;
     position:absolute;
   }
-  & input:checked ~ label .toggle-bar {
+  & input:checked ~ .toggle-bar {
     background: ${onBackground};
     -webkit-transition: background .25s ease-in-out;
     transition: background .25s ease-in-out;
     box-shadow: inset 0 0 0px 0.03em ${onToggleBorder};
     color: ${onColor};
   }
-  & input:checked ~ label .toggle-bar .toggle-text {
+  & input:checked ~ .toggle-bar .toggle-text {
     -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
   }
-  & input:checked ~ label .toggle-bar .toggle-button {
+  & input:checked ~ .toggle-bar .toggle-button {
     left: 50%;
     -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;

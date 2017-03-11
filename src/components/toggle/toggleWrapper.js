@@ -16,7 +16,7 @@ class ToggleWrapper extends Component {
         onProps={onProps}
         offProps={offProps}
         {...rest}
-        />
+      />
     )
   }
 }

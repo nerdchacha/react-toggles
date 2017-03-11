@@ -76,7 +76,7 @@ var Toggle = function (_Component) {
       }
       this.setState({ checked: !this.state.checked });
       e.stopPropagation();
-      this.input.click();
+      this.label.click();
     }
   }, {
     key: 'handleCheckboxClick',
@@ -90,14 +90,13 @@ var Toggle = function (_Component) {
 
       var _props = this.props,
           attributes = _props.attributes,
-          label = _props.label,
           onProps = _props.onProps,
           offProps = _props.offProps,
-          handleChange = _props.handleChange,
           toggleIcon = _props.toggleIcon,
           disabled = _props.disabled;
 
       attributes.id = attributes.id || 'toggle';
+      attributes.name = attributes.name || 'toggle';
       var renderOnText = onProps ? onProps.component : '';
       var renderOffText = offProps ? offProps.component : '';
       var classname = disabled ? 'disabled' : '';
@@ -109,40 +108,41 @@ var Toggle = function (_Component) {
           type: 'checkbox',
           checked: this.state.checked
         }, attributes, {
-          onChange: handleChange,
           onClick: this.handleCheckboxClick,
           ref: function ref(input) {
             return _this2.input = input;
           }
         })),
+        _react2.default.createElement('label', {
+          htmlFor: attributes.name,
+          ref: function ref(label) {
+            return _this2.label = label;
+          }
+        }),
         _react2.default.createElement(
-          'label',
-          { htmlFor: attributes.name, onClick: this.handleClick },
+          'div',
+          { className: 'toggle-bar', onClick: this.handleClick },
           _react2.default.createElement(
             'div',
-            { className: 'toggle-bar' },
+            { className: 'toggle-text' },
             _react2.default.createElement(
-              'div',
-              { className: 'toggle-text' },
-              _react2.default.createElement(
-                'span',
-                { className: 'on' },
-                renderOnText
-              ),
-              _react2.default.createElement(
-                'span',
-                { className: 'off' },
-                renderOffText
-              )
+              'span',
+              { className: 'on' },
+              renderOnText
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'toggle-button' },
-              _react2.default.createElement(
-                'span',
-                null,
-                toggleIcon
-              )
+              'span',
+              { className: 'off' },
+              renderOffText
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'toggle-button' },
+            _react2.default.createElement(
+              'span',
+              null,
+              toggleIcon
             )
           )
         )
@@ -166,11 +166,10 @@ Toggle.defaultProps = {
 
 Toggle.propTypes = {
   checked: _react.PropTypes.bool.isRequired,
-  handleClick: _react.PropTypes.func,
-  attributes: _react.PropTypes.object,
   disabled: _react.PropTypes.bool,
+  attributes: _react.PropTypes.object,
+  handleClick: _react.PropTypes.func,
   handleChange: _react.PropTypes.func,
-  label: _react.PropTypes.string,
   toggleIcon: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
   onProps: _react.PropTypes.shape({
     component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),

@@ -26,7 +26,7 @@ class Toggle extends Component {
     }
     this.setState({checked: !this.state.checked})
     e.stopPropagation()
-    this.input.click()
+    this.label.click()
   }
   handleCheckboxClick (e) {
     this.props.handleClick(e)
@@ -34,14 +34,13 @@ class Toggle extends Component {
   render () {
     let {
       attributes,
-      label,
       onProps,
       offProps,
-      handleChange,
       toggleIcon,
       disabled,
     } = this.props
     attributes.id = attributes.id || 'toggle'
+    attributes.name = attributes.name || 'toggle'
     const renderOnText = onProps ? onProps.component : ''
     const renderOffText = offProps ? offProps.component : ''
     const classname = disabled ? 'disabled' : ''
@@ -52,21 +51,22 @@ class Toggle extends Component {
           type='checkbox'
           checked={this.state.checked}
           {...attributes}
-          onChange={handleChange}
           onClick={this.handleCheckboxClick}
           ref={(input) => this.input = input}
         />
-        <label htmlFor={attributes.name} onClick={this.handleClick}>
-          <div className='toggle-bar'>
-            <div className='toggle-text'>
-              <span className='on'>{renderOnText}</span>
-              <span className='off'>{renderOffText}</span>
-            </div>
-            <div className='toggle-button'>
-              <span>{toggleIcon}</span>
-            </div>
+        <label
+          htmlFor={attributes.name}
+          ref={label => this.label = label}
+        />
+        <div className='toggle-bar' onClick={this.handleClick}>
+          <div className='toggle-text'>
+            <span className='on'>{renderOnText}</span>
+            <span className='off'>{renderOffText}</span>
           </div>
-        </label>
+          <div className='toggle-button'>
+            <span>{toggleIcon}</span>
+          </div>
+        </div>
       </div>
     )
   }
@@ -86,11 +86,10 @@ Toggle.defaultProps = {
 
 Toggle.propTypes = {
   checked: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func,
-  attributes: PropTypes.object,
   disabled: PropTypes.bool,
+  attributes: PropTypes.object,
+  handleClick: PropTypes.func,
   handleChange: PropTypes.func,
-  label: PropTypes.string,
   toggleIcon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
