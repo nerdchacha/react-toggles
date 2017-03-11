@@ -9,10 +9,14 @@ A simple collection of decently customizable toggle buttons available in **3** b
 
 The reaact toggele comes in 3 variants.
 The same can be imported and used in the project using
-###### ES6
+##### ES6
+
 ```import { IosToggle, SkewToggle, FlipToggle } from 'reacttoggles'```
-###### RequireJS
+
+##### RequireJS
+
 ```var Toggle = require('reacttoggles')```
+
 ```let { IosToggle, SkewToggle, FlipToggle } = Toggle```
 
 ## Motivation
@@ -44,9 +48,13 @@ onProps : {
 ```
 
 ```component``` : ```string``` OR ```React Element``` (usually icon) to be displayed when toggle is in **on** state
+
 ```backgroundColor```: background color of the toggle when the toggle is in **on** state
+
 ```color```: font color of the toggle when the toggle is in **on** state
+
 ```toggleBorder```: toggle button/bar border color when the toggle is in **on** state
+
 ```buttonBorder```: toggle button color when the toggle is in **on** state (only for ```IosToggle```)
 
 
@@ -63,9 +71,13 @@ offProps : {
 }
 ```
 ```component``` : ```string``` OR ```React Element``` (usually icon) to be displayed when toggle is in **off** state
+
 ```backgroundColor```: background color of the toggle when the toggle is in **off** state
+
 ```color```: font color of the toggle when the toggle is in **off** state
+
 ```toggleBorder```: toggle button/bar border color when the toggle is in **off** state
+
 ```buttonBorder```: toggle button color when the toggle is in **off** state (only for ```IosToggle```)
 
 ## Tests
