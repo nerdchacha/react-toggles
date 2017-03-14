@@ -78,6 +78,7 @@ var ToggleWrapper = function (_Component) {
 ToggleWrapper.propTypes = {
   fontSize: _react.PropTypes.number,
   getStyle: _react.PropTypes.func.isRequired,
+  showDefaultText: _react.PropTypes.bool,
   type: _react.PropTypes.string,
   onProps: _react.PropTypes.shape({
     component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),

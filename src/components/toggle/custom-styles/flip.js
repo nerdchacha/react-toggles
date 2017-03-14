@@ -33,7 +33,7 @@ export function getStyle (
   & .rc-toggle-wrapper.disabled {
     opacity: 0.7;
   }
-  & .rc-toggle-wrapper.disabled .toggle-bar {
+  & .rc-toggle-wrapper.disabled .toggle-text {
     cursor: not-allowed;
   }
   & input {
