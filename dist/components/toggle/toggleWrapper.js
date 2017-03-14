@@ -63,8 +63,8 @@ var ToggleWrapper = function (_Component) {
       var style = getStyle(fontSize, onProps, offProps);
       if (!onProps) onProps = {};
       if (!offProps) offProps = {};
-      onProps.component = onProps.component || 'ON';
-      offProps.component = offProps.component || 'OFF';
+      if (this.props.showDefaultText) onProps.component = onProps.component || 'ON';
+      if (this.props.showDefaultText) offProps.component = offProps.component || 'OFF';
       return _react2.default.createElement(_inlineStyleWrapper2.default, (0, _extends3.default)({
         style: style,
         onProps: onProps,

@@ -8,8 +8,8 @@ class ToggleWrapper extends Component {
     let style = getStyle(fontSize, onProps, offProps)
     if(!onProps) onProps = {}
     if(!offProps) offProps = {}
-    onProps.component = onProps.component || 'ON'
-    offProps.component = offProps.component || 'OFF'
+    if(this.props.showDefaultText) onProps.component = onProps.component || 'ON'
+    if(this.props.showDefaultText) offProps.component = offProps.component || 'OFF'
     return(
       <InlineStyleWrapper
         style={style}
@@ -24,6 +24,7 @@ class ToggleWrapper extends Component {
 ToggleWrapper.propTypes = {
   fontSize: PropTypes.number,
   getStyle: PropTypes.func.isRequired,
+  showDefaultText: PropTypes.bool,
   type: PropTypes.string,
   onProps: PropTypes.shape({
     component: PropTypes.oneOfType([

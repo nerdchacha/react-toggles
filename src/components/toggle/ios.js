@@ -8,7 +8,6 @@ class IosToggle extends Component {
     return(
       <ToggleWrapper
         getStyle={getStyle}
-        showDefaultText
         {...this.props}
       />
     )

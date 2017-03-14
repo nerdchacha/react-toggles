@@ -52,8 +52,7 @@ var IosToggle = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(_toggleWrapper2.default, (0, _extends3.default)({
-        getStyle: _ios.getStyle,
-        showDefaultText: true
+        getStyle: _ios.getStyle
       }, this.props));
     }
   }]);
