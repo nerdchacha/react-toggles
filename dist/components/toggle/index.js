@@ -76,7 +76,7 @@ var Toggle = function (_Component) {
       }
       this.setState({ checked: !this.state.checked });
       e.stopPropagation();
-      this.label.click();
+      this.input.click();
     }
   }, {
     key: 'handleCheckboxClick',
@@ -113,12 +113,7 @@ var Toggle = function (_Component) {
             return _this2.input = input;
           }
         })),
-        _react2.default.createElement('label', {
-          htmlFor: attributes.name,
-          ref: function ref(label) {
-            return _this2.label = label;
-          }
-        }),
+        _react2.default.createElement('label', { htmlFor: attributes.name }),
         _react2.default.createElement(
           'div',
           { className: 'toggle-bar', onClick: this.handleClick },

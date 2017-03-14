@@ -26,7 +26,7 @@ class Toggle extends Component {
     }
     this.setState({checked: !this.state.checked})
     e.stopPropagation()
-    this.label.click()
+    this.input.click()
   }
   handleCheckboxClick (e) {
     this.props.handleClick(e)
@@ -54,10 +54,7 @@ class Toggle extends Component {
           onClick={this.handleCheckboxClick}
           ref={(input) => this.input = input}
         />
-        <label
-          htmlFor={attributes.name}
-          ref={label => this.label = label}
-        />
+        <label htmlFor={attributes.name} />
         <div className='toggle-bar' onClick={this.handleClick}>
           <div className='toggle-text'>
             <span className='on'>{renderOnText}</span>
