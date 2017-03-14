@@ -25,7 +25,6 @@ export function getStyle (
   return `
   & .rc-toggle-wrapper {
     margin-left: 0.05em;
-    display: inline-block;
     line-height: 0;
     position: relative;
     ${wrapperFontSize};

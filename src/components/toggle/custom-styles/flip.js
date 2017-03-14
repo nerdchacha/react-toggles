@@ -24,8 +24,6 @@ export function getStyle (
   const textFontSize = fontSize ? `${4 * fontSize}px` : `0.25em`
   return `
   & .rc-toggle-wrapper {
-    margin-left: 0.05em;
-    display: inline-block;
     line-height: 0;
     position: relative;
     ${wrapperFontSize};
