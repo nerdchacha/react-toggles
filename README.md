@@ -27,6 +27,7 @@ Writing a small component like a toggle button is a pain since this doesn't come
 |  Prop     | Type   	| Description   	| Valid |
 |---	|---	|---	| --- |
 |   ```checked```	| ```bool```  	|  If ```true```, the toggle is checked. If ```false```, the toggle is unchecked 	| ```All``` |
+|   ```fontSize```	| ```number```  	|  Since all dimensions are set using ```em```, this will the ```fontSize``` os the ```em``` value of the wrapper div. If you want to give the size using css, don't use this property and instead give ```fontSize``` using css instead 	| ```All``` |
 | ```disabled```   	| ```bool```  	|  If ```true```, the toggle is disabled. If ```false```, the toggle is enabled  	| ```All``` |
 |   ```attributes```	| ```object```  	|  A ```key``` ```value``` pair of attributes that needs to be set for the input element. This may include attributes like ```name```, ```id``` etc 	| ```All``` |
 |   ```handleChange```	| ```function```  	|   A callback function that is executed everytime the toggle value changes. The current toggle value is passed as a parameter to this function	| ```All``` |
