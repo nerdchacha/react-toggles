@@ -1,6 +1,6 @@
 {
   "name": "reacttoggles",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A collection of commonly used toggle buttons implemented in react with internal css",
   "scripts": {
     "lint": "eslint src",
