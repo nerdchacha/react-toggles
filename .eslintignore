@@ -1,1 +1,6 @@
-dist/
+node_modules/**
+dist/**
+webpack*
+src/public/*
+src/tracking/omniture.js
+src/bundles/click/index.js
