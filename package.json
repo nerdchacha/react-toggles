@@ -10,7 +10,8 @@
     "lint:changed-PR": "LIST=`git diff-index --name-only HEAD^ | grep '.jsx\\{0,1\\}'$`; if [ \"$LIST\" ]; then eslint $LIST; fi",
     "test": "npm run test:local && npm run build:component",
     "test:local": "env NODE_ENV=test mocha --opts mocha.opts",
-    "build:component": "babel src/components/toggle --out-dir dist/components/toggle"
+    "build:component": "babel src/components/toggle --out-dir dist/components/toggle",
+    "start": "webpack-dev-server"
   },
   "main": "index.js",
   "keywords": [
@@ -30,8 +31,8 @@
   },
   "dependencies": {
     "react-inline-css": "^2.3.0",
-    "react": "15.0.2",
-    "react-dom": "15.0.2"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
@@ -51,6 +52,8 @@
     "babel-register": "^6.8.0",
     "babel-runtime": "^6.20.0",
     "browser-sync": "^2.18.5",
+    "chai": "^3.5.0",
+    "copy-webpack-plugin": "^4.0.1",
     "enzyme": "2.2.0",
     "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
@@ -63,17 +66,18 @@
     "eslint-plugin-standard": "^2.0.0",
     "eventsource-polyfill": "0.9.6",
     "expect": "1.19.0",
-    "chai": "^3.5.0",
     "jsdom": "8.5.0",
     "mocha": "2.4.5",
     "ncp": "^2.0.0",
+    "node-sass": "^4.5.0",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "15.0.2",
     "sass-loader": "^6.0.2",
     "scss-loader": "0.0.1",
     "style-loader": "^0.13.1",
-    "webpack": "1.13.0",
+    "webpack": "^1.13.2",
     "webpack-dev-middleware": "1.6.1",
+    "webpack-dev-server": "^1.16.0",
     "webpack-hot-middleware": "^2.10.0",
     "webpack-middleware": "^1.5.1"
   }
