@@ -40,6 +40,13 @@ export function getStyle (
     opacity: 0;
     position: absolute;
   }
+  & .toggle-bar {
+    height: 0.5em;
+    width: 1em;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+  }
   & .toggle-bar .toggle-text {
     font-size: ${textFontSize};
     width: 4em;
