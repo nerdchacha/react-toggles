@@ -1,4 +1,4 @@
-## React Toggles
+## React Toggles [![Build Status](https://travis-ci.org/nerdchacha/react-toggles.svg?branch=master)](https://travis-ci.org/nerdchacha/react-toggles)
 
 A simple collection of decently customizable toggle buttons available in **3** basic styles namely **ios, skewed** and **flip**. Since this module is more of a plug and play, it uses inline css to style the toggle button so that no ecternal css styles have to be imported.
 
