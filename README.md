@@ -22,6 +22,9 @@ The same can be imported and used in the project using
 ## Motivation
 Writing a small component like a toggle button is a pain since this doesn't come out of the box with frameworks like ```bootstrap```. Sometimes, all you need is a simple import with a plug and play feature withiut any setup. This is what this modules helps to achieve 
 
+## Repo
+https://github.com/nerdchacha/react-toggles
+
 ## Props
 
 |  Prop     | Type   	| Description   	| Valid |
@@ -91,6 +94,8 @@ test can be run using from the module directry using the script
 ## Authors
 **Yatin Gera** initial work and setup
 
+## Issue tracker
+https://github.com/nerdchacha/react-toggles/issues
 
 ## License
 
