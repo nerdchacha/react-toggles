@@ -75,7 +75,6 @@ export function getStyle (
     -webkit-transition: all .2s ease;
     transition: all .2s ease;
     font-weight: bold;
-    color: #fff;
     text-shadow: 0 0.015625em 0 rgba(0, 0, 0, 0.4);
     table-layout: fixed;
     margin: 0 auto;
