@@ -11,6 +11,7 @@
     "test": "npm run test:local && npm run build:component",
     "test:local": "env NODE_ENV=test mocha --opts mocha.opts",
     "build:component": "babel src/components/toggle --out-dir dist/components/toggle",
+    "add:component": "git add dist/",
     "start": "webpack-dev-server"
   },
   "main": "index.js",
@@ -26,6 +27,8 @@
   "license": "MIT",
   "precommit": {
     "run": [
+      "build:component",
+      "add:component",
       "lint:changed"
     ]
   },
