@@ -7,6 +7,9 @@ A simple collection of decently customizable toggle buttons available in **3** b
 
 ## Use
 
+The demo with live examples can be viewed [here](https://nerdchacha.github.io/).
+
+
 The reaact toggele comes in 3 variants.
 The same can be imported and used in the project using
 ##### ES6
