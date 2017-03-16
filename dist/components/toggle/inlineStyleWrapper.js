@@ -72,3 +72,4 @@ StyledToggle.propTypes = {
 };
 
 exports.default = StyledToggle;
+module.exports = exports['default'];

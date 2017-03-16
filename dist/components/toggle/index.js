@@ -177,3 +177,4 @@ Toggle.propTypes = {
 };
 
 exports.default = Toggle;
+module.exports = exports['default'];

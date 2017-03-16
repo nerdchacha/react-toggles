@@ -4,5 +4,8 @@
     "stage-0",
     "react"
   ],
-  "plugins": ["babel-plugin-transform-runtime"]
+  "plugins": [
+    "babel-plugin-add-module-exports",
+    "babel-plugin-transform-runtime"
+  ]
 }

@@ -61,3 +61,4 @@ var FlipToggle = function (_Component) {
 }(_react.Component);
 
 exports.default = FlipToggle;
+module.exports = exports['default'];

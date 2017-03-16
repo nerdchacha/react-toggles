@@ -25,7 +25,6 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'dist/docs'),
     port: 4000,
     host: 'localhost',
     inline: true,

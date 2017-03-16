@@ -61,3 +61,4 @@ var SkewedToggle = function (_Component) {
 }(_react.Component);
 
 exports.default = SkewedToggle;
+module.exports = exports['default'];
