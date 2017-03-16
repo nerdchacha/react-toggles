@@ -60,4 +60,3 @@ var IosToggle = function (_Component) {
 }(_react.Component);
 
 exports.default = IosToggle;
-module.exports = exports['default'];

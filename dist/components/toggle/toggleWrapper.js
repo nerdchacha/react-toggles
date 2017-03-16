@@ -101,4 +101,3 @@ ToggleWrapper.propTypes = {
 };
 
 exports.default = ToggleWrapper;
-module.exports = exports['default'];

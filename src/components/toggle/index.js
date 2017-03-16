@@ -13,8 +13,8 @@ class Toggle extends Component {
   componentWillReceiveProps (nextProps) {
     this.setChecked(nextProps.checked)
   }
-  componentDidUpdate () {
-    this.props.handleChange(this.state.checked)
+  componentDidUpdate (prevProps, prevState) {
+    if(prevState.checked !== this.state.checked) this.props.handleChange(this.state.checked)
   }
   setChecked (checked) {
     if(typeof checked !== 'undefined')

@@ -60,8 +60,8 @@ var Toggle = function (_Component) {
     }
   }, {
     key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this.props.handleChange(this.state.checked);
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevState.checked !== this.state.checked) this.props.handleChange(this.state.checked);
     }
   }, {
     key: 'setChecked',
@@ -177,4 +177,3 @@ Toggle.propTypes = {
 };
 
 exports.default = Toggle;
-module.exports = exports['default'];

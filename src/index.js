@@ -6,16 +6,27 @@ import FlipToggle from './components/toggle/flip'
 require('./style.css')
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {checked: false}
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange (value) {
+    console.log(value)
+  }
+  componentDidMount () {
+    setTimeout(() => this.setState({checked: true}), 2000)
+  }
   render () {
     return(
       <div className='container'>
         <h2>Welcome to react toggles</h2>
         <h3>Ios Toggle</h3>
-        <IosToggle />
+        <IosToggle checked={this.state.checked} handleChange={this.handleChange} />
         <h3>Skew Toggle</h3>
-        <SkewToggle />
+        <SkewToggle checked={this.state.checked} handleChange={this.handleChange} />
         <h3>Flip Toggle</h3>
-        <FlipToggle />
+        <FlipToggle checked={this.state.checked} handleChange={this.handleChange} />
       </div>
     )
   }
