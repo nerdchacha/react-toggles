@@ -92,7 +92,7 @@ export function getStyle (
   & .toggle-button {
     display: none;
   }
-  & input ~ .toggle-bar span.on, input ~ .toggle-bar span.on * {
+  & input ~ .toggle-bar span.on,& input ~ .toggle-bar span.on * {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     -webkit-transition: all .4s ease;
@@ -100,17 +100,17 @@ export function getStyle (
     background: ${onBackground};
     color: ${onColor};
   }
-  & input ~ .toggle-bar span.off, input ~ .toggle-bar span.off * {
+  & input ~ .toggle-bar span.off,& input ~ .toggle-bar span.off * {
   -webkit-transition: all .4s ease;
     transition: all .4s ease;
     background: ${offBackground};
     color: ${offColor};
   }
-  & input:checked ~ .toggle-bar span.on, input:checked ~ .toggle-bar span.on * {
+  & input:checked ~ .toggle-bar span.on,& input:checked ~ .toggle-bar span.on * {
     -webkit-transform: rotateY(0);
     transform: rotateY(0);
   }
-  & input:checked ~ .toggle-bar span.off, input:checked ~ .toggle-bar span.off * {
+  & input:checked ~ .toggle-bar span.off,& input:checked ~ .toggle-bar span.off * {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }

@@ -39,6 +39,7 @@ export function getStyle (
   }
   const wrapperFontSize = fontSize ? `font-size: ${fontSize}em` : ''
   const textFontSize = fontSize ? `${4 * fontSize}px` : `0.25em`
+  const buttonFontSize = fontSize ? `${4 * fontSize}px` : `0.5em`
   return `
   & .rc-toggle-wrapper {
     line-height: 0;
@@ -88,6 +89,8 @@ export function getStyle (
     -webkit-transition: background .25s ease-in-out;
     transition: background .25s ease-in-out;
     position: relative;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
   }
   & .toggle-bar .toggle-text {
     font-size: ${textFontSize};
@@ -125,7 +128,7 @@ export function getStyle (
     transition: .25s ease-in-out;
   }
   & .toggle-bar .toggle-button span {
-    font-size: ${textFontSize};
+    font-size: ${buttonFontSize};
     color: black;
   }`
 }
