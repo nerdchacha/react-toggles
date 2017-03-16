@@ -3,7 +3,7 @@ export function getStyle (
   onProps,
   offProps
 ) {
-  let onBackground = '#13bf11'
+  let onBackground = '#53D769'
   if(onProps && onProps.style && onProps.style.backgroundColor) {
     onBackground = onProps.style.backgroundColor
   }
@@ -11,11 +11,11 @@ export function getStyle (
   if(onProps && onProps.style && onProps.style.color) {
     onColor = onProps.style.color
   }
-  let onToggleBorder = '#13bf11'
+  let onToggleBorder = '#53D769'
   if(onProps && onProps.style && onProps.style.toggleBorder) {
     onToggleBorder = onProps.style.toggleBorder
   }
-  let onButtonBorder = '#13bf11'
+  let onButtonBorder = '#53D769'
   if(onProps && onProps.style && onProps.style.buttonBorder) {
     onButtonBorder = onProps.style.buttonBorder
   }

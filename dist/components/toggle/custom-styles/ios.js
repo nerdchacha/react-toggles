@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getStyle = getStyle;
 function getStyle(fontSize, onProps, offProps) {
-  var onBackground = '#13bf11';
+  var onBackground = '#53D769';
   if (onProps && onProps.style && onProps.style.backgroundColor) {
     onBackground = onProps.style.backgroundColor;
   }
@@ -13,11 +13,11 @@ function getStyle(fontSize, onProps, offProps) {
   if (onProps && onProps.style && onProps.style.color) {
     onColor = onProps.style.color;
   }
-  var onToggleBorder = '#13bf11';
+  var onToggleBorder = '#53D769';
   if (onProps && onProps.style && onProps.style.toggleBorder) {
     onToggleBorder = onProps.style.toggleBorder;
   }
-  var onButtonBorder = '#13bf11';
+  var onButtonBorder = '#53D769';
   if (onProps && onProps.style && onProps.style.buttonBorder) {
     onButtonBorder = onProps.style.buttonBorder;
   }
