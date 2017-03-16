@@ -14,6 +14,18 @@
     "add:component": "git add dist/",
     "start": "webpack-dev-server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nerdchacha/react-toggles"
+  },
+  "author": {
+    "name": "Yatin Gera",
+    "email": "yatin.gera5@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/nerdchacha/react-toggles/issues"
+  },
+  "homepage": "https://nerdchacha.github.io/",
   "main": "index.js",
   "keywords": [
     "toggle",
@@ -23,7 +35,6 @@
     "react",
     "react-component"
   ],
-  "author": "Yatin Gera <yatin.gera5@gmail.com>",
   "license": "MIT",
   "precommit": {
     "run": [
