@@ -5,10 +5,11 @@ A simple collection of decently customizable toggle buttons available in **3** b
 ## Installation
 ```npm install reacttoggles```
 
-## Use
+## Demo
 
 The demo with live examples can be viewed [here](https://nerdchacha.github.io/).
 
+## Use
 
 The reaact toggele comes in 3 variants.
 The same can be imported and used in the project using
@@ -60,7 +61,7 @@ onProps : {
 
 ```color```: font color of the toggle when the toggle is in **on** state
 
-```toggleBorder```: toggle button/bar border color when the toggle is in **on** state
+```toggleBorder```: toggle button/bar border color when the toggle is in **on** state (only for ```IosToggle```)
 
 ```buttonBorder```: toggle button color when the toggle is in **on** state (only for ```IosToggle```)
 
@@ -83,7 +84,7 @@ offProps : {
 
 ```color```: font color of the toggle when the toggle is in **off** state
 
-```toggleBorder```: toggle button/bar border color when the toggle is in **off** state
+```toggleBorder```: toggle button/bar border color when the toggle is in **off** state (only for ```IosToggle```)
 
 ```buttonBorder```: toggle button color when the toggle is in **off** state (only for ```IosToggle```)
 
