@@ -1,6 +1,6 @@
 ## React Toggles [![Build Status](https://travis-ci.org/nerdchacha/react-toggles.svg?branch=master)](https://travis-ci.org/nerdchacha/react-toggles)
 
-A simple collection of decently customizable toggle buttons available in **3** basic styles namely **ios, skewed** and **flip**. Since this module is more of a plug and play, it uses inline css to style the toggle button so that no ecternal css styles have to be imported.
+A simple collection of decently customizable toggle buttons available in **3** basic styles namely **ios, skewed** and **flip**. Since this module is more of a plug and play, it uses inline css to style the toggle button so that no external css styles have to be imported.
 
 ## Installation
 ```npm install reacttoggles```
@@ -39,9 +39,28 @@ https://github.com/nerdchacha/react-toggles
 |   ```attributes```	| ```object```  	|  A ```key``` ```value``` pair of attributes that needs to be set for the input element. This may include attributes like ```name```, ```id``` etc 	| ```All``` |
 |   ```handleChange```	| ```function```  	|   A callback function that is executed everytime the toggle value changes. The current toggle value is passed as a parameter to this function	| ```All``` |
 |   ```handleClick```	|   ```function```	| A callback function that is executed everytime the toggle is clicked. The current synthetic event is passed as a parameter to this function 	| ```All``` |
-|   ```toggleIcon```	| ```string``` OR ```react element``` 	| This string or react element (usually some icon) will be rendered on top of the toggle button.    	| ```IosToggle``` |
+|   ```toggleIcon```	| ```object``` 	| Configuration for the toggle button.    	| ```IosToggle``` |
 |  ```onProps``` 	|  ```object```	| Configuration for on state  	|```All``` |
 |  ```offProps``` 	|  ```object```	| Configuration for off state  	|```All``` |
+
+```javascript
+toggleIcon : {
+    component: String OR ReactElement
+    style: {
+        backgroundColor: String,
+        color: String,
+    }
+}
+```
+
+```component``` : ```string``` OR ```React Element``` (usually icon) to be displayed when toggle is in **on** state (only for ```IosToggle```)
+
+```backgroundColor```: background color of the toggle when the toggle is in **on** state (only for ```IosToggle```)
+
+```color```: font color of the toggle when the toggle is in **on** state (only for ```IosToggle```)
+
+
+
 
 ```javascript
 onProps : {
@@ -91,9 +110,12 @@ offProps : {
 ## Tests
 
 The modules currently comes with a test setup but with very minimilistic test cases.
-test can be run using from the module directry using the script
+Test can be run using from the module directry using the script
 
 ```npm run test:local```
+
+## Change Log
+changelog can we viewed [here](https://github.com/nerdchacha/react-toggles/blob/master/CHANGELOG.md)
 
 ## Authors
 **Yatin Gera** initial work and setup
