@@ -4,8 +4,8 @@ import InlineStyleWrapper from './inlineStyleWrapper'
 
 class ToggleWrapper extends Component {
   render () {
-    let {fontSize, onProps, offProps, getStyle, ...rest} = this.props
-    let style = getStyle(fontSize, onProps, offProps)
+    let {fontSize, onProps, offProps, toggleIcon, getStyle, ...rest} = this.props
+    let style = getStyle(fontSize, onProps, offProps, toggleIcon)
     if(!onProps) onProps = {}
     if(!offProps) offProps = {}
     if(this.props.showDefaultText) onProps.component = onProps.component || 'ON'
@@ -15,6 +15,7 @@ class ToggleWrapper extends Component {
         style={style}
         onProps={onProps}
         offProps={offProps}
+        toggleIcon={toggleIcon}
         {...rest}
       />
     )
@@ -26,6 +27,18 @@ ToggleWrapper.propTypes = {
   getStyle: PropTypes.func.isRequired,
   showDefaultText: PropTypes.bool,
   type: PropTypes.string,
+  toggleIcon: PropTypes.shape({
+    component: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]),
+    style: PropTypes.shape({
+      backgroundColor: PropTypes.string,
+      color: PropTypes.string,
+      toggleBorder: PropTypes.string,
+      buttonBorder: PropTypes.string,
+    }),
+  }),
   onProps: PropTypes.shape({
     component: PropTypes.oneOfType([
       PropTypes.string,

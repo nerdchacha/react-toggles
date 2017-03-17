@@ -1,7 +1,8 @@
 export function getStyle (
   fontSize,
   onProps,
-  offProps
+  offProps,
+  toggleIcon
 ) {
   let onBackground = '#53D769'
   if(onProps && onProps.style && onProps.style.backgroundColor) {
@@ -36,6 +37,15 @@ export function getStyle (
   let offButtonBorder = '#d3d3d3'
   if(offProps && offProps.style && offProps.style.buttonBorder) {
     offButtonBorder = offProps.style.buttonBorder
+  }
+
+  let toggleColor = 'black'
+  if(toggleIcon && toggleIcon.style && toggleIcon.style.color) {
+    toggleColor = toggleIcon.style.color
+  }
+  let toggleBackground = 'white'
+  if(toggleIcon && toggleIcon.style && toggleIcon.style.backgroundColor) {
+    toggleBackground = toggleIcon.style.backgroundColor
   }
   const wrapperFontSize = fontSize ? `font-size: ${fontSize}em` : ''
   const textFontSize = fontSize ? `${4 * fontSize}px` : `0.25em`
@@ -116,7 +126,8 @@ export function getStyle (
     align-items: center;
     box-shadow: inset 0 0 0px 0.03em ${offButtonBorder};
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: ${toggleBackground};
+    color: ${toggleColor};
     position: absolute;
     width: 0.5em;
     height: 0.5em;
@@ -125,6 +136,9 @@ export function getStyle (
     left: 0;
     -webkit-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+  }
+  & .toggle-bar .toggle-button * {
+   color: ${toggleColor};
   }
   & .toggle-bar .toggle-button > span {
     font-size: ${textFontSize};

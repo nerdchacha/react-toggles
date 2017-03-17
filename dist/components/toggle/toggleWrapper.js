@@ -57,10 +57,11 @@ var ToggleWrapper = function (_Component) {
           fontSize = _props.fontSize,
           onProps = _props.onProps,
           offProps = _props.offProps,
+          toggleIcon = _props.toggleIcon,
           getStyle = _props.getStyle,
-          rest = (0, _objectWithoutProperties3.default)(_props, ['fontSize', 'onProps', 'offProps', 'getStyle']);
+          rest = (0, _objectWithoutProperties3.default)(_props, ['fontSize', 'onProps', 'offProps', 'toggleIcon', 'getStyle']);
 
-      var style = getStyle(fontSize, onProps, offProps);
+      var style = getStyle(fontSize, onProps, offProps, toggleIcon);
       if (!onProps) onProps = {};
       if (!offProps) offProps = {};
       if (this.props.showDefaultText) onProps.component = onProps.component || 'ON';
@@ -68,7 +69,8 @@ var ToggleWrapper = function (_Component) {
       return _react2.default.createElement(_inlineStyleWrapper2.default, (0, _extends3.default)({
         style: style,
         onProps: onProps,
-        offProps: offProps
+        offProps: offProps,
+        toggleIcon: toggleIcon
       }, rest));
     }
   }]);
@@ -80,6 +82,15 @@ ToggleWrapper.propTypes = {
   getStyle: _react.PropTypes.func.isRequired,
   showDefaultText: _react.PropTypes.bool,
   type: _react.PropTypes.string,
+  toggleIcon: _react.PropTypes.shape({
+    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+    style: _react.PropTypes.shape({
+      backgroundColor: _react.PropTypes.string,
+      color: _react.PropTypes.string,
+      toggleBorder: _react.PropTypes.string,
+      buttonBorder: _react.PropTypes.string
+    })
+  }),
   onProps: _react.PropTypes.shape({
     component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
     style: _react.PropTypes.shape({

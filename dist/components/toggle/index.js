@@ -99,6 +99,7 @@ var Toggle = function (_Component) {
       attributes.name = attributes.name || 'toggle';
       var renderOnText = onProps ? onProps.component : '';
       var renderOffText = offProps ? offProps.component : '';
+      var renderToggleIcon = toggleIcon ? toggleIcon.component : '';
       var classname = disabled ? 'disabled' : '';
 
       return _react2.default.createElement(
@@ -137,7 +138,7 @@ var Toggle = function (_Component) {
             _react2.default.createElement(
               'span',
               null,
-              toggleIcon
+              renderToggleIcon
             )
           )
         )
@@ -165,7 +166,10 @@ Toggle.propTypes = {
   attributes: _react.PropTypes.object,
   handleClick: _react.PropTypes.func,
   handleChange: _react.PropTypes.func,
-  toggleIcon: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+  toggleIcon: _react.PropTypes.shape({
+    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+    style: _react.PropTypes.object
+  }),
   onProps: _react.PropTypes.shape({
     component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
     style: _react.PropTypes.object

@@ -43,6 +43,7 @@ class Toggle extends Component {
     attributes.name = attributes.name || 'toggle'
     const renderOnText = onProps ? onProps.component : ''
     const renderOffText = offProps ? offProps.component : ''
+    const renderToggleIcon = toggleIcon ? toggleIcon.component : ''
     const classname = disabled ? 'disabled' : ''
 
     return (
@@ -61,7 +62,7 @@ class Toggle extends Component {
             <span className='off'>{renderOffText}</span>
           </div>
           <div className='toggle-button'>
-            <span>{toggleIcon}</span>
+            <span>{renderToggleIcon}</span>
           </div>
         </div>
       </div>
@@ -87,10 +88,13 @@ Toggle.propTypes = {
   attributes: PropTypes.object,
   handleClick: PropTypes.func,
   handleChange: PropTypes.func,
-  toggleIcon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  toggleIcon: PropTypes.shape({
+    component: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]),
+    style: PropTypes.object,
+  }),
   onProps: PropTypes.shape({
     component: PropTypes.oneOfType([
       PropTypes.string,
