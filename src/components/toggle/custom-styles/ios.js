@@ -59,7 +59,7 @@ export function getStyle (
     ${wrapperFontSize};
   }
   & .rc-toggle-wrapper.disabled {
-    opacity: 0.4;
+    opacity: 0.7;
   }
   & .rc-toggle-wrapper.disabled .toggle-bar {
     cursor: not-allowed;
