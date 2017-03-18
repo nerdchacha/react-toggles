@@ -37,3 +37,7 @@ build
 
 # dotenv file
 .env
+
+
+#nyc
+.nyc_output/
