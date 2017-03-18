@@ -48,7 +48,10 @@ export function getStyle (
     toggleBackground = toggleIcon.style.backgroundColor
   }
   const wrapperFontSize = fontSize ? `font-size: ${fontSize}em` : ''
-  const textFontSize = fontSize ? `${4 * fontSize}px` : `0.25em`
+  let textFontSize = fontSize ? `${4 * fontSize}px` : `0.25em`
+  if((onProps && onProps.component) || (offProps && offProps.component))
+    if((typeof onProps.component || typeof offProps.component) === 'string')
+      textFontSize = fontSize ? `${4 * fontSize}px` : `0.18em`
   return `
   & .rc-toggle-wrapper {
     line-height: 0;
