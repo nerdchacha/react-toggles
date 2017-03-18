@@ -24,7 +24,7 @@ class App extends Component {
         <h2>Welcome to react toggles</h2>
         <h3>Ios Toggle</h3>
         <IosToggle
-          offProps={{style: {color: 'white', backgroundColor: '#FF3334'}, component: (<FontAwesome name='times' />)}}
+          offProps={{style: {color: 'white'}, component: (<FontAwesome name='times' />)}}
           onProps={{style: {color: 'white'}, component: (<FontAwesome name='check' />)}}
         />
         <h3>Skew Toggle</h3>

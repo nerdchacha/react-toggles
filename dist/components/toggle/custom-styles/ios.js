@@ -30,7 +30,7 @@ function getStyle(fontSize, onProps, offProps, toggleIcon) {
     onButtonBorder = onProps.style.buttonBorder;
   }
 
-  var offBackground = 'white';
+  var offBackground = '#ddd';
   if (offProps && offProps.style && offProps.style.backgroundColor) {
     offBackground = offProps.style.backgroundColor;
   }
@@ -38,11 +38,11 @@ function getStyle(fontSize, onProps, offProps, toggleIcon) {
   if (offProps && offProps.style && offProps.style.color) {
     offColor = offProps.style.color;
   }
-  var offToggleBorder = '#d3d3d3';
+  var offToggleBorder = '#ddd';
   if (offProps && offProps.style && offProps.style.toggleBorder) {
     offToggleBorder = offProps.style.toggleBorder;
   }
-  var offButtonBorder = '#d3d3d3';
+  var offButtonBorder = '#ddd';
   if (offProps && offProps.style && offProps.style.buttonBorder) {
     offButtonBorder = offProps.style.buttonBorder;
   }

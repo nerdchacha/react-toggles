@@ -22,7 +22,7 @@ export function getStyle (
   }
 
 
-  let offBackground = 'white'
+  let offBackground = '#ddd'
   if(offProps && offProps.style && offProps.style.backgroundColor) {
     offBackground = offProps.style.backgroundColor
   }
@@ -30,11 +30,11 @@ export function getStyle (
   if(offProps && offProps.style && offProps.style.color) {
     offColor = offProps.style.color
   }
-  let offToggleBorder = '#d3d3d3'
+  let offToggleBorder = '#ddd'
   if(offProps && offProps.style && offProps.style.toggleBorder) {
     offToggleBorder = offProps.style.toggleBorder
   }
-  let offButtonBorder = '#d3d3d3'
+  let offButtonBorder = '#ddd'
   if(offProps && offProps.style && offProps.style.buttonBorder) {
     offButtonBorder = offProps.style.buttonBorder
   }
