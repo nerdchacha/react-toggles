@@ -58,6 +58,14 @@ toggleIcon : {
 }
 ```
 
+-----
+
+### NOTE:
+The checkbox has a default value of ```id``` and ```name``` as **```toggle```**. Please make sure you provide different values using the ```attribute``` props in case you are using more than one ```toggle button``` in your project
+
+
+-----
+
 ```component``` : ```string``` OR ```React Element``` (usually icon) to be displayed when toggle is in **on** state (only for ```IosToggle```)
 
 ```backgroundColor```: background color of the toggle when the toggle is in **on** state (only for ```IosToggle```)
