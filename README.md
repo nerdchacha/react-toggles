@@ -13,6 +13,7 @@ The demo with live examples can be viewed [here](https://nerdchacha.github.io/).
 
 The reaact toggele comes in 3 variants.
 The same can be imported and used in the project using
+
 ##### ES6
 
 ```import { IosToggle, SkewToggle, FlipToggle } from 'reacttoggles'```
@@ -21,7 +22,11 @@ The same can be imported and used in the project using
 
 ```var Toggle = require('reacttoggles')```
 
-```let { IosToggle, SkewToggle, FlipToggle } = Toggle```
+```var IosToggle = Toggle.IosToggle```
+
+```var SkewToggle = Toggle.SkewToggle```
+
+```var FlipToggle = Toggle.FlipToggle``` 
 
 ## Motivation
 Writing a small component like a toggle button is a pain since this doesn't come out of the box with frameworks like ```bootstrap```. Sometimes, all you need is a simple import with a plug and play feature withiut any setup. This is what this modules helps to achieve 
@@ -31,17 +36,17 @@ https://github.com/nerdchacha/react-toggles
 
 ## Props
 
-|  Prop     | Type   	| Description   	| Valid |
-|---	|---	|---	| --- |
-|   ```checked```	| ```bool```  	|  If ```true```, the toggle is checked. If ```false```, the toggle is unchecked 	| ```All``` |
-|   ```fontSize```	| ```number```  	|  Since all dimensions are set using ```em```, this will the ```fontSize``` os the ```em``` value of the wrapper div. If you want to give the size using css, don't use this property and instead give ```fontSize``` using css instead 	| ```All``` |
-| ```disabled```   	| ```bool```  	|  If ```true```, the toggle is disabled. If ```false```, the toggle is enabled  	| ```All``` |
-|   ```attributes```	| ```object```  	|  A ```key``` ```value``` pair of attributes that needs to be set for the input element. This may include attributes like ```name```, ```id``` etc 	| ```All``` |
-|   ```handleChange```	| ```function```  	|   A callback function that is executed everytime the toggle value changes. The current toggle value is passed as a parameter to this function	| ```All``` |
-|   ```handleClick```	|   ```function```	| A callback function that is executed everytime the toggle is clicked. The current synthetic event is passed as a parameter to this function 	| ```All``` |
-|   ```toggleIcon```	| ```object``` 	| Configuration for the toggle button.    	| ```IosToggle``` |
-|  ```onProps``` 	|  ```object```	| Configuration for on state  	|```All``` |
-|  ```offProps``` 	|  ```object```	| Configuration for off state  	|```All``` |
+|  Prop     | Type   	| Description   	| Valid | Demo |
+|---	|---	|---	| --- | --- |
+|   ```checked```	| ```bool```  	|  If ```true```, the toggle is checked. If ```false```, the toggle is unchecked  	| ```All``` | **[demo1](https://nerdchacha.github.io/#defaultchecked)   [demo2](https://nerdchacha.github.io/#defaultunchecked)** |
+|   ```fontSize```	| ```number```  	|  Since all dimensions are set using ```em```, this will the ```fontSize``` os the ```em``` value of the wrapper div. If you want to give the size using css, don't use this property and instead give ```fontSize``` using css instead. 	| ```All``` | **[demo](https://nerdchacha.github.io/#fontsize)** |
+| ```disabled```   	| ```bool```  	|  If ```true```, the toggle is disabled. If ```false```, the toggle is enabled  	| ```All``` | **[demo](https://nerdchacha.github.io/#disabled)** | 
+|   ```attributes```	| ```object```  	|  A ```key``` ```value``` pair of attributes that needs to be set for the input element. This may include attributes like ```name```, ```id``` etc 	| ```All``` | **[demo](https://nerdchacha.github.io/#attributes)** |
+|   ```handleChange```	| ```function```  	|   A callback function that is executed everytime the toggle value changes. The current toggle value is passed as a parameter to this function	| ```All``` | **[demo](https://nerdchacha.github.io/#handlechange)** |
+|   ```handleClick```	|   ```function```	| A callback function that is executed everytime the toggle is clicked. The current synthetic event is passed as a parameter to this function 	| ```All``` | **[demo](https://nerdchacha.github.io/#handleclick)** |
+|   ```toggleIcon```	| ```object``` 	| Configuration for the toggle button.    	| ```IosToggle``` | **[demo](https://nerdchacha.github.io/#toggleicon)** |
+|  ```onProps``` 	|  ```object```	| Configuration for on state  	|```All``` | **[demo1](https://nerdchacha.github.io/#onofficon) [demo2](https://nerdchacha.github.io/#onoffcolor)** |
+|  ```offProps``` 	|  ```object```	| Configuration for off state  	|```All``` | **[demo1](https://nerdchacha.github.io/#onofficon) [demo2](https://nerdchacha.github.io/#onoffcolor)** |
 
 ```javascript
 toggleIcon : {
