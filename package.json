@@ -1,6 +1,6 @@
 {
   "name": "reacttoggles",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A collection of commonly used toggle buttons implemented in react with internal css",
   "scripts": {
     "lint": "eslint src",
@@ -41,7 +41,6 @@
   "precommit": {
     "run": [
       "build:component",
-      "build:bundle",
       "add:component",
       "lint:changed"
     ]

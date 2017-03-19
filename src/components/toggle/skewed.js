@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react'
-require('./stylesheet/skew.scss')
 
 import ToggleWrapper from './toggleWrapper'
 import {getStyle} from './custom-styles/skewed'

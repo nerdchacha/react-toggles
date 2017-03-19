@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react'
-require('./stylesheet/flip.scss')
 
 import ToggleWrapper from './toggleWrapper'
 import {getStyle} from './custom-styles/flip'
