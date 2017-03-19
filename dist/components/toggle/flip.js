@@ -40,6 +40,8 @@ var _flip = require('./custom-styles/flip');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require('./stylesheet/flip.scss');
+
 var FlipToggle = function (_Component) {
   (0, _inherits3.default)(FlipToggle, _Component);
 

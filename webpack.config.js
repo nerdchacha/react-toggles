@@ -1,15 +1,21 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var path = require('path')
 
+const bundles = {
+  'ios': ['./src/components/toggle/ios'],
+  'skew': ['./src/components/toggle/skewed'],
+  'flip': ['./src/components/toggle/flip'],
+  'bundle': './src/index.js'
+}
 module.exports = {
-  entry: path.join(__dirname, 'src/index.js'),
+  entry: bundles,
   devtool: 'source-map',
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js'
   },
-
   module: {
     loaders: [
       {
@@ -18,22 +24,26 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        test: /\.(scss|css)$/,
+        loader: ExtractTextPlugin.extract("style-loader", ["css-loader", "postcss-loader", "sass-loader"]),
       },
     ],
   },
-
+  postcss: () => {
+    return [
+      require('autoprefixer')
+    ];
+  },
   devServer: {
     port: 4000,
     host: 'localhost',
     inline: true,
     info: false,
   },
-
   plugins: [
     new CopyWebpackPlugin([
       { from: path.join(__dirname, 'src/index.html') },
     ]),
+    new ExtractTextPlugin('[name].css', { allChunks: true }),
   ],
 }

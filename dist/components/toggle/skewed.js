@@ -40,6 +40,8 @@ var _skewed = require('./custom-styles/skewed');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require('./stylesheet/skew.scss');
+
 var SkewedToggle = function (_Component) {
   (0, _inherits3.default)(SkewedToggle, _Component);
 

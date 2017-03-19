@@ -40,6 +40,8 @@ var _ios = require('./custom-styles/ios');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+require('./stylesheet/ios.scss');
+
 var IosToggle = function (_Component) {
   (0, _inherits3.default)(IosToggle, _Component);
 

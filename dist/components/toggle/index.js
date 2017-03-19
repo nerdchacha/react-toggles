@@ -93,7 +93,8 @@ var Toggle = function (_Component) {
           onProps = _props.onProps,
           offProps = _props.offProps,
           toggleIcon = _props.toggleIcon,
-          disabled = _props.disabled;
+          disabled = _props.disabled,
+          type = _props.type;
 
       attributes.id = attributes.id || 'toggle';
       attributes.name = attributes.name || 'toggle';
@@ -104,7 +105,7 @@ var Toggle = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'rc-toggle-wrapper ' + classname },
+        { className: 'rc-toggle-wrapper ' + type + '-toggle ' + classname },
         _react2.default.createElement('input', (0, _extends3.default)({
           type: 'checkbox',
           checked: this.state.checked
@@ -163,6 +164,7 @@ Toggle.defaultProps = {
 Toggle.propTypes = {
   checked: _react.PropTypes.bool.isRequired,
   disabled: _react.PropTypes.bool,
+  type: _react.PropTypes.string,
   attributes: _react.PropTypes.object,
   handleClick: _react.PropTypes.func,
   handleChange: _react.PropTypes.func,

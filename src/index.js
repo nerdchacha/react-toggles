@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import IosToggle from './components/toggle/ios'
-import SkewToggle from './components/toggle/skewed'
-import FlipToggle from './components/toggle/flip'
+import Toggle from './components/toggle/index'
 import FontAwesome from 'react-fontawesome'
+import IosToggle from './components/toggle/ios'
 require('./style.css')
+require('./components/toggle/stylesheet/flip.scss')
 
 class App extends Component {
   constructor () {
@@ -23,15 +23,16 @@ class App extends Component {
       <div className='container'>
         <h2>Welcome to react toggles</h2>
         <h3>Ios Toggle</h3>
-        <IosToggle
-          disabled
-          offProps={{style: {color: 'white'}, component: (<FontAwesome name='times' />)}}
-          onProps={{style: {color: 'white'}, component: (<FontAwesome name='check' />)}}
+        <Toggle
+          type='ios'
+          offProps={{component: (<FontAwesome name='times' />)}}
+          onProps={{component: (<FontAwesome name='check' />)}}
         />
-        <h3>Skew Toggle</h3>
-        <SkewToggle />
-        <h3>Flip Toggle</h3>
-        <FlipToggle />
+        <IosToggle
+          fontSize={3}
+          offProps={{component: (<FontAwesome name='times' />)}}
+          onProps={{component: (<FontAwesome name='check' />)}}
+        />
       </div>
     )
   }

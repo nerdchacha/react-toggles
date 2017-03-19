@@ -1,0 +1,88 @@
+$onColor: #53D769;
+$offColor: #DDD;
+
+.rc-toggle-wrapper.ios-toggle {
+  line-height: 0;
+  position: relative;
+  font-size: 40px;
+  .on {
+    color: white
+  }
+  .off {
+    color: black
+  }
+  &.disabled {
+    opacity: 0.7;
+    .toggle-bar {
+      cursor: not-allowed;
+    }
+  }
+  input {
+    max-height: 0;
+    max-width: 0;
+    opacity: 0;
+    position:absolute;
+    &:checked ~ .toggle-bar {
+      background: $onColor;
+      transition: background .25s ease-in-out;
+      box-shadow: inset 0 0 0px 0.03em $onColor;
+      color: white;
+      .toggle-text {
+      }
+      .toggle-button {
+        left: 50%;
+        box-shadow: inset 0 0 0px 0.03em $onColor;
+      }
+    }
+  }
+  .toggle-bar {
+    cursor: pointer;
+    color: $offColor;
+    box-shadow: inset 0 0 0px 0.03em $offColor;
+    background: $offColor;
+    box-sizing: border-box;
+    height: 0.5em;
+    width: 1em;
+    border-radius: 0.25em;
+    overflow: hidden;
+    top: 0;
+    position: relative;
+    transition: all .25s ease-in-out;
+    .toggle-text {
+      font-size: 0.25em;
+      height: 100%;
+      width: 90%;
+      display: table;
+      table-layout: fixed;
+      margin: 0 auto;
+      > span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+    .toggle-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 0 0px 0.03em $offColor;
+      box-sizing: border-box;
+      background-color: white;
+      color: black;
+      position: absolute;
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 100%;
+      top: 0;
+      left: 0;
+      transition: .25s ease-in-out;
+      * {
+        color: black;
+      }
+      > span {
+        font-size: 0.25em;
+        color: black;
+      }
+    }
+  }
+}

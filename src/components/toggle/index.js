@@ -38,6 +38,7 @@ class Toggle extends Component {
       offProps,
       toggleIcon,
       disabled,
+      type,
     } = this.props
     attributes.id = attributes.id || 'toggle'
     attributes.name = attributes.name || 'toggle'
@@ -47,7 +48,7 @@ class Toggle extends Component {
     const classname = disabled ? 'disabled' : ''
 
     return (
-      <div className={`rc-toggle-wrapper ${classname}`}>
+      <div className={`rc-toggle-wrapper ${type}-toggle ${classname}`}>
         <input
           type='checkbox'
           checked={this.state.checked}
@@ -85,6 +86,7 @@ Toggle.defaultProps = {
 Toggle.propTypes = {
   checked: PropTypes.bool.isRequired,
   disabled: PropTypes.bool,
+  type: PropTypes.string,
   attributes: PropTypes.object,
   handleClick: PropTypes.func,
   handleChange: PropTypes.func,
