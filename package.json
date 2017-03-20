@@ -41,6 +41,7 @@
   "precommit": {
     "run": [
       "build:component",
+      "build:bundle",
       "add:component",
       "lint:changed"
     ]

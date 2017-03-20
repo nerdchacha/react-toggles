@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import Toggle from './components/toggle/index'
 import FontAwesome from 'react-fontawesome'
-import IosToggle from './components/toggle/ios'
+
+import { Toggle, IosToggle } from '../index'
 require('./style.css')
-require('./components/toggle/stylesheet/flip.scss')
 
 class App extends Component {
   constructor () {

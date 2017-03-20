@@ -3,9 +3,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var path = require('path')
 
 const bundles = {
-  'ios': ['./src/components/toggle/ios'],
-  'skew': ['./src/components/toggle/skewed'],
-  'flip': ['./src/components/toggle/flip'],
+  'ios': ['./src/components/toggle/stylesheet/ios'],
+  'skew': ['./src/components/toggle/stylesheet/skew'],
+  'flip': ['./src/components/toggle/stylesheet/flip'],
   'bundle': './src/index.js'
 }
 module.exports = {

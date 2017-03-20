@@ -72,22 +72,15 @@
 	
 	var _reactDom = __webpack_require__(118);
 	
-	var _index = __webpack_require__(264);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
-	var _reactFontawesome = __webpack_require__(270);
+	var _reactFontawesome = __webpack_require__(264);
 	
 	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 	
-	var _ios = __webpack_require__(272);
-	
-	var _ios2 = _interopRequireDefault(_ios);
+	var _index = __webpack_require__(266);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(279);
-	__webpack_require__(280);
+	__webpack_require__(283);
 	
 	var App = function (_Component) {
 	  (0, _inherits3.default)(App, _Component);
@@ -132,12 +125,12 @@
 	          null,
 	          'Ios Toggle'
 	        ),
-	        _react2.default.createElement(_index2.default, {
+	        _react2.default.createElement(_index.Toggle, {
 	          type: 'ios',
 	          offProps: { component: _react2.default.createElement(_reactFontawesome2.default, { name: 'times' }) },
 	          onProps: { component: _react2.default.createElement(_reactFontawesome2.default, { name: 'check' }) }
 	        }),
-	        _react2.default.createElement(_ios2.default, {
+	        _react2.default.createElement(_index.IosToggle, {
 	          fontSize: 3,
 	          offProps: { component: _react2.default.createElement(_reactFontawesome2.default, { name: 'times' }) },
 	          onProps: { component: _react2.default.createElement(_reactFontawesome2.default, { name: 'check' }) }
@@ -23124,292 +23117,13 @@
 	  value: true
 	});
 	
-	var _extends2 = __webpack_require__(265);
-	
-	var _extends3 = _interopRequireDefault(_extends2);
-	
-	var _getPrototypeOf = __webpack_require__(1);
-	
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-	
-	var _classCallCheck2 = __webpack_require__(27);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(28);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _possibleConstructorReturn2 = __webpack_require__(32);
-	
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-	
-	var _inherits2 = __webpack_require__(79);
-	
-	var _inherits3 = _interopRequireDefault(_inherits2);
-	
-	var _react = __webpack_require__(87);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Toggle = function (_Component) {
-	  (0, _inherits3.default)(Toggle, _Component);
-	
-	  function Toggle() {
-	    (0, _classCallCheck3.default)(this, Toggle);
-	
-	    var _this = (0, _possibleConstructorReturn3.default)(this, (Toggle.__proto__ || (0, _getPrototypeOf2.default)(Toggle)).call(this));
-	
-	    _this.handleClick = _this.handleClick.bind(_this);
-	    _this.handleCheckboxClick = _this.handleCheckboxClick.bind(_this);
-	    _this.state = { checked: false };
-	    return _this;
-	  }
-	
-	  (0, _createClass3.default)(Toggle, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.setChecked(this.props.checked);
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      this.setChecked(nextProps.checked);
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps, prevState) {
-	      if (prevState.checked !== this.state.checked) this.props.handleChange(this.state.checked);
-	    }
-	  }, {
-	    key: 'setChecked',
-	    value: function setChecked(checked) {
-	      if (typeof checked !== 'undefined') this.setState({ checked: checked });
-	    }
-	  }, {
-	    key: 'handleClick',
-	    value: function handleClick(e) {
-	      if (this.props.disabled) {
-	        return;
-	      }
-	      this.setState({ checked: !this.state.checked });
-	      e.stopPropagation();
-	      this.input.click();
-	    }
-	  }, {
-	    key: 'handleCheckboxClick',
-	    value: function handleCheckboxClick(e) {
-	      this.props.handleClick(e);
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-	
-	      var _props = this.props,
-	          attributes = _props.attributes,
-	          onProps = _props.onProps,
-	          offProps = _props.offProps,
-	          toggleIcon = _props.toggleIcon,
-	          disabled = _props.disabled,
-	          type = _props.type;
-	
-	      attributes.id = attributes.id || 'toggle';
-	      attributes.name = attributes.name || 'toggle';
-	      var renderOnText = onProps ? onProps.component : '';
-	      var renderOffText = offProps ? offProps.component : '';
-	      var renderToggleIcon = toggleIcon ? toggleIcon.component : '';
-	      var classname = disabled ? 'disabled' : '';
-	
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'rc-toggle-wrapper ' + type + '-toggle ' + classname },
-	        _react2.default.createElement('input', (0, _extends3.default)({
-	          type: 'checkbox',
-	          checked: this.state.checked
-	        }, attributes, {
-	          onClick: this.handleCheckboxClick,
-	          ref: function ref(input) {
-	            return _this2.input = input;
-	          }
-	        })),
-	        _react2.default.createElement('label', { htmlFor: attributes.name }),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'toggle-bar', onClick: this.handleClick },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'toggle-text' },
-	            _react2.default.createElement(
-	              'span',
-	              { className: 'on' },
-	              renderOnText
-	            ),
-	            _react2.default.createElement(
-	              'span',
-	              { className: 'off' },
-	              renderOffText
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'toggle-button' },
-	            _react2.default.createElement(
-	              'span',
-	              null,
-	              renderToggleIcon
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	  return Toggle;
-	}(_react.Component);
-	
-	Toggle.defaultProps = {
-	  checked: false,
-	  disabled: false,
-	  attributes: {},
-	  handleClick: function handleClick() {
-	    return null;
-	  },
-	  handleChange: function handleChange() {
-	    return null;
-	  }
-	};
-	
-	Toggle.propTypes = {
-	  checked: _react.PropTypes.bool.isRequired,
-	  disabled: _react.PropTypes.bool,
-	  type: _react.PropTypes.string,
-	  attributes: _react.PropTypes.object,
-	  handleClick: _react.PropTypes.func,
-	  handleChange: _react.PropTypes.func,
-	  toggleIcon: _react.PropTypes.shape({
-	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-	    style: _react.PropTypes.object
-	  }),
-	  onProps: _react.PropTypes.shape({
-	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-	    style: _react.PropTypes.object
-	  }),
-	  offProps: _react.PropTypes.shape({
-	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-	    style: _react.PropTypes.object
-	  })
-	};
-	
-	exports.default = Toggle;
-	module.exports = exports['default'];
-
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	exports.__esModule = true;
-	
-	var _assign = __webpack_require__(266);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _assign2.default || function (target) {
-	  for (var i = 1; i < arguments.length; i++) {
-	    var source = arguments[i];
-	
-	    for (var key in source) {
-	      if (Object.prototype.hasOwnProperty.call(source, key)) {
-	        target[key] = source[key];
-	      }
-	    }
-	  }
-	
-	  return target;
-	};
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(267), __esModule: true };
-
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(268);
-	module.exports = __webpack_require__(14).Object.assign;
-
-/***/ },
-/* 268 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(13);
-	
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(269)});
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys  = __webpack_require__(46)
-	  , gOPS     = __webpack_require__(70)
-	  , pIE      = __webpack_require__(71)
-	  , toObject = __webpack_require__(4)
-	  , IObject  = __webpack_require__(49)
-	  , $assign  = Object.assign;
-	
-	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = !$assign || __webpack_require__(23)(function(){
-	  var A = {}
-	    , B = {}
-	    , S = Symbol()
-	    , K = 'abcdefghijklmnopqrst';
-	  A[S] = 7;
-	  K.split('').forEach(function(k){ B[k] = k; });
-	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
-	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
-	  var T     = toObject(target)
-	    , aLen  = arguments.length
-	    , index = 1
-	    , getSymbols = gOPS.f
-	    , isEnum     = pIE.f;
-	  while(aLen > index){
-	    var S      = IObject(arguments[index++])
-	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
-	      , length = keys.length
-	      , j      = 0
-	      , key;
-	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-	  } return T;
-	} : $assign;
-
-/***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _react = __webpack_require__(87);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _screenReaderStyles = __webpack_require__(271);
+	var _screenReaderStyles = __webpack_require__(265);
 	
 	var _screenReaderStyles2 = _interopRequireDefault(_screenReaderStyles);
 	
@@ -23515,7 +23229,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 271 */
+/* 265 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23536,7 +23250,20 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 272 */
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = {
+	  IosToggle: __webpack_require__(267),
+	  SkewToggle: __webpack_require__(279),
+	  FlipToggle: __webpack_require__(281),
+	  Toggle: __webpack_require__(277)
+	};
+
+/***/ },
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23545,7 +23272,7 @@
 	  value: true
 	});
 	
-	var _extends2 = __webpack_require__(265);
+	var _extends2 = __webpack_require__(268);
 	
 	var _extends3 = _interopRequireDefault(_extends2);
 	
@@ -23577,11 +23304,11 @@
 	
 	var _toggleWrapper2 = _interopRequireDefault(_toggleWrapper);
 	
-	var _ios = __webpack_require__(277);
+	var _ios = __webpack_require__(278);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	__webpack_require__(278);
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 	
 	var IosToggle = function (_Component) {
 	  (0, _inherits3.default)(IosToggle, _Component);
@@ -23606,6 +23333,94 @@
 	module.exports = exports['default'];
 
 /***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	var _assign = __webpack_require__(269);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _assign2.default || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];
+	
+	    for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }
+	
+	  return target;
+	};
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(270), __esModule: true };
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(271);
+	module.exports = __webpack_require__(14).Object.assign;
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(13);
+	
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(272)});
+
+/***/ },
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(46)
+	  , gOPS     = __webpack_require__(70)
+	  , pIE      = __webpack_require__(71)
+	  , toObject = __webpack_require__(4)
+	  , IObject  = __webpack_require__(49)
+	  , $assign  = Object.assign;
+	
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(23)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
 /* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -23615,7 +23430,7 @@
 	  value: true
 	});
 	
-	var _extends2 = __webpack_require__(265);
+	var _extends2 = __webpack_require__(268);
 	
 	var _extends3 = _interopRequireDefault(_extends2);
 	
@@ -23651,7 +23466,9 @@
 	
 	var _inlineStyleWrapper2 = _interopRequireDefault(_inlineStyleWrapper);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 	
 	var ToggleWrapper = function (_Component) {
 	  (0, _inherits3.default)(ToggleWrapper, _Component);
@@ -23787,11 +23604,13 @@
 	
 	var _reactInlineCss2 = _interopRequireDefault(_reactInlineCss);
 	
-	var _index = __webpack_require__(264);
+	var _index = __webpack_require__(277);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 	
 	var StyledToggle = function (_Component) {
 	  (0, _inherits3.default)(StyledToggle, _Component);
@@ -23808,11 +23627,7 @@
 	          style = _props.style,
 	          rest = (0, _objectWithoutProperties3.default)(_props, ['style']);
 	
-	      return _react2.default.createElement(
-	        _reactInlineCss2.default,
-	        { stylesheet: style },
-	        _react2.default.createElement(_index2.default, rest)
-	      );
+	      return _react2.default.createElement(_reactInlineCss2.default, { stylesheet: style }, _react2.default.createElement(_index2.default, rest));
 	    }
 	  }]);
 	  return StyledToggle;
@@ -23900,13 +23715,176 @@
 	  value: true
 	});
 	
+	var _extends2 = __webpack_require__(268);
+	
+	var _extends3 = _interopRequireDefault(_extends2);
+	
+	var _getPrototypeOf = __webpack_require__(1);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(27);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(28);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(79);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	var _react = __webpack_require__(87);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+	
+	var Toggle = function (_Component) {
+	  (0, _inherits3.default)(Toggle, _Component);
+	
+	  function Toggle() {
+	    (0, _classCallCheck3.default)(this, Toggle);
+	
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (Toggle.__proto__ || (0, _getPrototypeOf2.default)(Toggle)).call(this));
+	
+	    _this.handleClick = _this.handleClick.bind(_this);
+	    _this.handleCheckboxClick = _this.handleCheckboxClick.bind(_this);
+	    _this.state = { checked: false };
+	    return _this;
+	  }
+	
+	  (0, _createClass3.default)(Toggle, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.setChecked(this.props.checked);
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.setChecked(nextProps.checked);
+	    }
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate(prevProps, prevState) {
+	      if (prevState.checked !== this.state.checked) this.props.handleChange(this.state.checked);
+	    }
+	  }, {
+	    key: 'setChecked',
+	    value: function setChecked(checked) {
+	      if (typeof checked !== 'undefined') this.setState({ checked: checked });
+	    }
+	  }, {
+	    key: 'handleClick',
+	    value: function handleClick(e) {
+	      if (this.props.disabled) {
+	        return;
+	      }
+	      this.setState({ checked: !this.state.checked });
+	      e.stopPropagation();
+	      this.input.click();
+	    }
+	  }, {
+	    key: 'handleCheckboxClick',
+	    value: function handleCheckboxClick(e) {
+	      this.props.handleClick(e);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var _props = this.props,
+	          attributes = _props.attributes,
+	          onProps = _props.onProps,
+	          offProps = _props.offProps,
+	          toggleIcon = _props.toggleIcon,
+	          disabled = _props.disabled,
+	          type = _props.type;
+	
+	      attributes.id = attributes.id || 'toggle';
+	      attributes.name = attributes.name || 'toggle';
+	      var renderOnText = onProps ? onProps.component : '';
+	      var renderOffText = offProps ? offProps.component : '';
+	      var renderToggleIcon = toggleIcon ? toggleIcon.component : '';
+	      var classname = disabled ? 'disabled' : '';
+	
+	      return _react2.default.createElement('div', { className: 'rc-toggle-wrapper ' + type + '-toggle ' + classname }, _react2.default.createElement('input', (0, _extends3.default)({
+	        type: 'checkbox',
+	        checked: this.state.checked
+	      }, attributes, {
+	        onClick: this.handleCheckboxClick,
+	        ref: function ref(input) {
+	          return _this2.input = input;
+	        }
+	      })), _react2.default.createElement('label', { htmlFor: attributes.name }), _react2.default.createElement('div', { className: 'toggle-bar', onClick: this.handleClick }, _react2.default.createElement('div', { className: 'toggle-text' }, _react2.default.createElement('span', { className: 'on' }, renderOnText), _react2.default.createElement('span', { className: 'off' }, renderOffText)), _react2.default.createElement('div', { className: 'toggle-button' }, _react2.default.createElement('span', null, renderToggleIcon))));
+	    }
+	  }]);
+	  return Toggle;
+	}(_react.Component);
+	
+	Toggle.defaultProps = {
+	  checked: false,
+	  disabled: false,
+	  attributes: {},
+	  handleClick: function handleClick() {
+	    return null;
+	  },
+	  handleChange: function handleChange() {
+	    return null;
+	  }
+	};
+	
+	Toggle.propTypes = {
+	  checked: _react.PropTypes.bool.isRequired,
+	  disabled: _react.PropTypes.bool,
+	  type: _react.PropTypes.string,
+	  attributes: _react.PropTypes.object,
+	  handleClick: _react.PropTypes.func,
+	  handleChange: _react.PropTypes.func,
+	  toggleIcon: _react.PropTypes.shape({
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+	    style: _react.PropTypes.object
+	  }),
+	  onProps: _react.PropTypes.shape({
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+	    style: _react.PropTypes.object
+	  }),
+	  offProps: _react.PropTypes.shape({
+	    component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
+	    style: _react.PropTypes.object
+	  })
+	};
+	
+	exports.default = Toggle;
+	module.exports = exports['default'];
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _typeof2 = __webpack_require__(33);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
 	exports.getStyle = getStyle;
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
 	
 	function getStyle(fontSize, onProps, offProps, toggleIcon) {
 	  var onBackground = '#53D769';
@@ -23958,19 +23936,215 @@
 	}
 
 /***/ },
-/* 278 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
 /* 279 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends2 = __webpack_require__(268);
+	
+	var _extends3 = _interopRequireDefault(_extends2);
+	
+	var _getPrototypeOf = __webpack_require__(1);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(27);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(28);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(79);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	var _react = __webpack_require__(87);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _toggleWrapper = __webpack_require__(273);
+	
+	var _toggleWrapper2 = _interopRequireDefault(_toggleWrapper);
+	
+	var _skewed = __webpack_require__(280);
+	
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+	
+	var SkewedToggle = function (_Component) {
+	  (0, _inherits3.default)(SkewedToggle, _Component);
+	
+	  function SkewedToggle() {
+	    (0, _classCallCheck3.default)(this, SkewedToggle);
+	    return (0, _possibleConstructorReturn3.default)(this, (SkewedToggle.__proto__ || (0, _getPrototypeOf2.default)(SkewedToggle)).apply(this, arguments));
+	  }
+	
+	  (0, _createClass3.default)(SkewedToggle, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_toggleWrapper2.default, (0, _extends3.default)({
+	        getStyle: _skewed.getStyle,
+	        showDefaultText: true
+	      }, this.props));
+	    }
+	  }]);
+	  return SkewedToggle;
+	}(_react.Component);
+	
+	exports.default = SkewedToggle;
+	module.exports = exports['default'];
 
 /***/ },
 /* 280 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getStyle = getStyle;
+	function getStyle(fontSize, onProps, offProps) {
+	  var onBackground = '#86d993';
+	  if (onProps && onProps.style && onProps.style.backgroundColor) {
+	    onBackground = onProps.style.backgroundColor;
+	  }
+	  var onColor = 'white';
+	  if (onProps && onProps.style && onProps.style.color) {
+	    onColor = onProps.style.color;
+	  }
+	
+	  var offBackground = '#888';
+	  if (offProps && offProps.style && offProps.style.backgroundColor) {
+	    offBackground = offProps.style.backgroundColor;
+	  }
+	  var offColor = 'white';
+	  if (offProps && offProps.style && offProps.style.color) {
+	    offColor = offProps.style.color;
+	  }
+	  var wrapperFontSize = fontSize ? 'font-size: ' + fontSize + 'em' : '';
+	  var textFontSize = fontSize ? 4 * fontSize + 'px' : '0.25em';
+	  return '\n  & .rc-toggle-wrapper {\n    margin-left: 0.05em;\n    line-height: 0;\n    position: relative;\n    ' + wrapperFontSize + ';\n  }\n  & .rc-toggle-wrapper.disabled {\n    opacity: 0.7;\n  }\n  & .rc-toggle-wrapper.disabled .toggle-bar {\n    cursor: not-allowed;\n  }\n  & input {\n    max-height: 0;\n    max-width: 0;\n    opacity: 0;\n    position:absolute;\n  }\n  & input:checked ~ .toggle-bar {\n    background: ' + onBackground + ';\n    -webkit-transition: all .2s ease;\n    transition: all .2s ease;\n  }\n  & input:checked ~ .toggle-bar .toggle-text {\n    color: ' + onColor + ';\n    -webkit-transition: all .2s ease;\n    transition: all .2s ease;\n    left: 0%;\n  }\n  & .toggle-bar {\n    cursor: pointer;\n    width: 1em;\n    height: 0.5em;\n    background-color: ' + offBackground + ';\n    -webkit-transform: skew(-10deg);\n    transform: skew(-10deg);\n    position: relative;\n    overflow: hidden;\n  }\n  & .toggle-bar .toggle-text {\n    font-size: ' + textFontSize + ';\n    color: ' + offColor + ';\n    left: -100%;\n    position: absolute;\n    height: 100%;\n    -webkit-transform: skew(10deg);\n    transform: skew(10deg);\n    width: 200%;\n    display: table;\n    -webkit-transition: all .2s ease;\n    transition: all .2s ease;\n    font-weight: bold;\n    text-shadow: 0 0.015625em 0 rgba(0, 0, 0, 0.4);\n    table-layout: fixed;\n    margin: 0 auto;\n  }\n  & .toggle-button {\n    display: none;\n  }\n  & .toggle-bar .toggle-text > span {\n    display: table-cell;\n    vertical-align: middle;\n    text-align: center;\n  }';
+	}
+
+/***/ },
+/* 281 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends2 = __webpack_require__(268);
+	
+	var _extends3 = _interopRequireDefault(_extends2);
+	
+	var _getPrototypeOf = __webpack_require__(1);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(27);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(28);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(32);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(79);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	var _react = __webpack_require__(87);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _toggleWrapper = __webpack_require__(273);
+	
+	var _toggleWrapper2 = _interopRequireDefault(_toggleWrapper);
+	
+	var _flip = __webpack_require__(282);
+	
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { default: obj };
+	}
+	
+	var FlipToggle = function (_Component) {
+	  (0, _inherits3.default)(FlipToggle, _Component);
+	
+	  function FlipToggle() {
+	    (0, _classCallCheck3.default)(this, FlipToggle);
+	    return (0, _possibleConstructorReturn3.default)(this, (FlipToggle.__proto__ || (0, _getPrototypeOf2.default)(FlipToggle)).apply(this, arguments));
+	  }
+	
+	  (0, _createClass3.default)(FlipToggle, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(_toggleWrapper2.default, (0, _extends3.default)({
+	        getStyle: _flip.getStyle,
+	        showDefaultText: true
+	      }, this.props));
+	    }
+	  }]);
+	  return FlipToggle;
+	}(_react.Component);
+	
+	exports.default = FlipToggle;
+	module.exports = exports['default'];
+
+/***/ },
+/* 282 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.getStyle = getStyle;
+	function getStyle(fontSize, onProps, offProps) {
+	  var onBackground = '#7FC6A6';
+	  if (onProps && onProps.style && onProps.style.backgroundColor) {
+	    onBackground = onProps.style.backgroundColor;
+	  }
+	  var onColor = 'white';
+	  if (onProps && onProps.style && onProps.style.color) {
+	    onColor = onProps.style.color;
+	  }
+	
+	  var offBackground = '#FF3A19';
+	  if (offProps && offProps.style && offProps.style.backgroundColor) {
+	    offBackground = offProps.style.backgroundColor;
+	  }
+	  var offColor = 'white';
+	  if (offProps && offProps.style && offProps.style.color) {
+	    offColor = offProps.style.color;
+	  }
+	  var wrapperFontSize = fontSize ? 'font-size: ' + fontSize + 'em' : '';
+	  var textFontSize = fontSize ? 4 * fontSize + 'px' : '0.25em';
+	  return '\n  & .rc-toggle-wrapper {\n    line-height: 0;\n    position: relative;\n    ' + wrapperFontSize + ';\n  }\n  & .rc-toggle-wrapper.disabled {\n    opacity: 0.7;\n  }\n  & .rc-toggle-wrapper.disabled .toggle-text {\n    cursor: not-allowed;\n  }\n  & input {\n    max-height: 0;\n    max-width: 0;\n    opacity: 0;\n    position: absolute;\n  }\n  & .toggle-bar {\n    height: 0.5em;\n    width: 1em;\n    cursor: pointer;\n    box-sizing: border-box;\n    position: relative;\n  }\n  & .toggle-bar .toggle-text {\n    font-size: ' + textFontSize + ';\n    width: 4em;\n    height: 2em;\n    -webkit-transition: all .2s ease;\n    transition: all .2s ease;\n    font-family: sans-serif;\n    -webkit-perspective: 200px;\n    perspective: 200px;\n    outline: 0;\n    display: block;\n    position: relative;\n    cursor: pointer;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n  }\n  & .toggle-bar .toggle-text span {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center;\n    -webkit-box-pack: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n    height: 100%;\n    -webkit-transition: all .4s ease;\n    transition: all .4s ease;\n    width: 100%;\n    text-align: center;\n    position: absolute;\n    line-height: 2em;\n    font-weight: bold;\n    top: 0;\n    left: 0;\n    -webkit-backface-visibility: hidden;\n    backface-visibility: hidden;\n    border-radius: 0.25em;\n  }\n  & .toggle-button {\n    display: none;\n  }\n  & input ~ .toggle-bar span.on,& input ~ .toggle-bar span.on * {\n    -webkit-transform: rotateY(-180deg);\n    transform: rotateY(-180deg);\n    -webkit-transition: all .4s ease;\n    transition: all .4s ease;\n    background: ' + onBackground + ';\n    color: ' + onColor + ';\n  }\n  & input ~ .toggle-bar span.off,& input ~ .toggle-bar span.off * {\n  -webkit-transition: all .4s ease;\n    transition: all .4s ease;\n    background: ' + offBackground + ';\n    color: ' + offColor + ';\n  }\n  & input:checked ~ .toggle-bar span.on,& input:checked ~ .toggle-bar span.on * {\n    -webkit-transform: rotateY(0);\n    transform: rotateY(0);\n  }\n  & input:checked ~ .toggle-bar span.off,& input:checked ~ .toggle-bar span.off * {\n    -webkit-transform: rotateY(180deg);\n    transform: rotateY(180deg);\n  }\n  ';
+	}
+
+/***/ },
+/* 283 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
