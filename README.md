@@ -125,9 +125,9 @@ We understand that using inline styles is such a pain in the neck specially when
 
 with the **v0.2.0**, the module comes with 3 default css stylesheets namely ```ios.css```, ```skew.css``` and ```flip.css``` available inside the ```dist``` folder.
 
-You can not import just the raw toggle (without the inline wrapper element) using 
+You can now import just the raw toggle (without the inline wrapper element) using 
 
-```var Toggle = var Toggle = require('reacttoggles').Toggle```
+```var Toggle = require('reacttoggles').Toggle```
 
 OR
 
@@ -157,7 +157,9 @@ You can finally use the toggle using
 
 ```<Toggle type='skew' onProps={{component: <FontAwesome name='times' />}} />```
 
-will work fine but
+will work fine
+
+but
 
 ```<Toggle type='skew' onProps={{style: backgroundColor: 'orange'}} />```
 
