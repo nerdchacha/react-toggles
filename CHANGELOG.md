@@ -4,3 +4,6 @@
 
 ## v0.1.6
 - Change `IosToggle` default off `backgroundColor`
+
+## v0.2.0
+- Comes with inbuild css files that can be used instead of inline css
