@@ -1,6 +1,6 @@
 ## React Toggles [![Build Status](https://travis-ci.org/nerdchacha/react-toggles.svg?branch=master)](https://travis-ci.org/nerdchacha/react-toggles)
 
-A simple collection of decently customizable toggle buttons available in **3** basic styles namely **ios, skewed** and **flip**. Since this module is more of a plug and play, it uses inline css to style the toggle button so that no external css styles have to be imported.
+A simple collection of decently customizable toggle buttons available in **3** basic styles namely **ios, skewed** and **flip**. Since this module is more of a plug and play, it uses **inline css** to style the toggle button so that no external css styles have to be imported.
 
 ## Installation
 ```npm install reacttoggles```
@@ -119,6 +119,53 @@ offProps : {
 ```toggleBorder```: toggle button/bar border color when the toggle is in **off** state (only for ```IosToggle```)
 
 ```buttonBorder```: toggle button color when the toggle is in **off** state (only for ```IosToggle```)
+
+## Using External CSS instead of Inline CSS
+We understand that using inline styles is such a pain in the neck specially when you want to override some properties using an external css file.
+
+with the **v2.0.0**, the module comes with 3 default css stylesheets namely ```ios.css```, ```skew.css``` and ```flip.css``` available inside the ```dist``` folder.
+
+You can not import just the raw toggle (without the inline wrapper element) using 
+
+```var Toggle = var Toggle = require('reacttoggles').Toggle```
+
+OR
+
+``` let { Toggle } from 'reacttoggles'```
+
+Considering you are running through ```webpack```, you can then require any of the 3 css, depending on your requirement, in the same file using 
+
+```require('reacttoggles/dist/ios.css')```
+
+```require('reacttoggles/dist/skew.css')```
+
+```require('reacttoggles/dist/flip.css')```
+
+You can finally use the toggle using 
+
+```<Toggle type='ios' />```
+
+```<Toggle type='skew' />```
+
+```<Toggle type='flip' />```
+
+
+
+##### NOTE: the ```type``` prop is required and must be provided for the css to be applied properly.
+
+##### NOTE: you can still use all the above mentioned props with this toggle except for style related props. For example 
+
+```<Toggle type='skew' onProps={{component: <FontAwesome name='times' />}} />```
+
+will work fine but
+
+```<Toggle type='skew' onProps={{style: backgroundColor: 'orange'}} />```
+
+will make no differene to the css
+
+
+## Dev
+you can clone the repo and start the dev mode using ```npm start``` command
 
 ## Tests
 
