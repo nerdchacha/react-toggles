@@ -123,7 +123,7 @@ offProps : {
 ## Using External CSS instead of Inline CSS
 We understand that using inline styles is such a pain in the neck specially when you want to override some properties using an external css file.
 
-with the **v2.0.0**, the module comes with 3 default css stylesheets namely ```ios.css```, ```skew.css``` and ```flip.css``` available inside the ```dist``` folder.
+with the **v0.2.0**, the module comes with 3 default css stylesheets namely ```ios.css```, ```skew.css``` and ```flip.css``` available inside the ```dist``` folder.
 
 You can not import just the raw toggle (without the inline wrapper element) using 
 
