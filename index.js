@@ -1,6 +1,6 @@
 module.exports = {
-  IosToggle: require('./dist/components/toggle/ios'),
-  SkewToggle: require('./dist/components/toggle/skewed'),
-  FlipToggle: require('./dist/components/toggle/flip'),
-  Toggle: require('./dist/components/toggle/index'),
+  IosToggle: require('./src/components/toggle/ios'),
+  SkewToggle: require('./src/components/toggle/skewed'),
+  FlipToggle: require('./src/components/toggle/flip'),
+  Toggle: require('./src/components/toggle/index'),
 }

@@ -23306,9 +23306,7 @@
 	
 	var _ios = __webpack_require__(278);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var IosToggle = function (_Component) {
 	  (0, _inherits3.default)(IosToggle, _Component);
@@ -23466,9 +23464,7 @@
 	
 	var _inlineStyleWrapper2 = _interopRequireDefault(_inlineStyleWrapper);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var ToggleWrapper = function (_Component) {
 	  (0, _inherits3.default)(ToggleWrapper, _Component);
@@ -23608,9 +23604,7 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var StyledToggle = function (_Component) {
 	  (0, _inherits3.default)(StyledToggle, _Component);
@@ -23627,7 +23621,11 @@
 	          style = _props.style,
 	          rest = (0, _objectWithoutProperties3.default)(_props, ['style']);
 	
-	      return _react2.default.createElement(_reactInlineCss2.default, { stylesheet: style }, _react2.default.createElement(_index2.default, rest));
+	      return _react2.default.createElement(
+	        _reactInlineCss2.default,
+	        { stylesheet: style },
+	        _react2.default.createElement(_index2.default, rest)
+	      );
 	    }
 	  }]);
 	  return StyledToggle;
@@ -23743,9 +23741,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Toggle = function (_Component) {
 	  (0, _inherits3.default)(Toggle, _Component);
@@ -23816,15 +23812,47 @@
 	      var renderToggleIcon = toggleIcon ? toggleIcon.component : '';
 	      var classname = disabled ? 'disabled' : '';
 	
-	      return _react2.default.createElement('div', { className: 'rc-toggle-wrapper ' + type + '-toggle ' + classname }, _react2.default.createElement('input', (0, _extends3.default)({
-	        type: 'checkbox',
-	        checked: this.state.checked
-	      }, attributes, {
-	        onClick: this.handleCheckboxClick,
-	        ref: function ref(input) {
-	          return _this2.input = input;
-	        }
-	      })), _react2.default.createElement('label', { htmlFor: attributes.name }), _react2.default.createElement('div', { className: 'toggle-bar', onClick: this.handleClick }, _react2.default.createElement('div', { className: 'toggle-text' }, _react2.default.createElement('span', { className: 'on' }, renderOnText), _react2.default.createElement('span', { className: 'off' }, renderOffText)), _react2.default.createElement('div', { className: 'toggle-button' }, _react2.default.createElement('span', null, renderToggleIcon))));
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'rc-toggle-wrapper ' + type + '-toggle ' + classname },
+	        _react2.default.createElement('input', (0, _extends3.default)({
+	          type: 'checkbox',
+	          checked: this.state.checked
+	        }, attributes, {
+	          onClick: this.handleCheckboxClick,
+	          ref: function ref(input) {
+	            return _this2.input = input;
+	          }
+	        })),
+	        _react2.default.createElement('label', { htmlFor: attributes.name }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'toggle-bar', onClick: this.handleClick },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'toggle-text' },
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'on' },
+	              renderOnText
+	            ),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'off' },
+	              renderOffText
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'toggle-button' },
+	            _react2.default.createElement(
+	              'span',
+	              null,
+	              renderToggleIcon
+	            )
+	          )
+	        )
+	      );
 	    }
 	  }]);
 	  return Toggle;
@@ -23882,9 +23910,7 @@
 	
 	exports.getStyle = getStyle;
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function getStyle(fontSize, onProps, offProps, toggleIcon) {
 	  var onBackground = '#53D769';
@@ -23979,9 +24005,7 @@
 	
 	var _skewed = __webpack_require__(280);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var SkewedToggle = function (_Component) {
 	  (0, _inherits3.default)(SkewedToggle, _Component);
@@ -24083,9 +24107,7 @@
 	
 	var _flip = __webpack_require__(282);
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var FlipToggle = function (_Component) {
 	  (0, _inherits3.default)(FlipToggle, _Component);
